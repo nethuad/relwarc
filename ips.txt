@@ -1,0 +1,10 @@
+ips = ['8.8.8.8','1.1.1.1']
+r = requests.get("http://ip.taobao.com/service/getIpInfo.php")
+
+for i in range(100):
+    for ip in ips:
+        payload = {'ip': ip}
+        r = requests.get("http://ip.taobao.com/service/getIpInfo.php", params=payload)
+        res = r.json()
+        #city = res["data"]["city"]
+        print i,ip,res["data"]["city"],res["data"]["country"]
