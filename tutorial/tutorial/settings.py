@@ -28,8 +28,8 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
-DOWNLOAD_DELAY = 30
+# DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 11
 
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
@@ -63,6 +63,10 @@ DEFAULT_REQUEST_HEADERS = {
 #DOWNLOADER_MIDDLEWARES = {
 #    'tutorial.middlewares.TutorialDownloaderMiddleware': 543,
 #}
+
+# DOWNLOADER_MIDDLEWARES = {
+#    'tutorial.middlewares.ProxyMiddleware': 543,
+# }
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html

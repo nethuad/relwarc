@@ -1,3 +1,4 @@
+import requests
 ips = ['8.8.8.8','1.1.1.1']
 r = requests.get("http://ip.taobao.com/service/getIpInfo.php")
 
