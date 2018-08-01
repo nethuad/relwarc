@@ -103,5 +103,24 @@ class TutorialDownloaderMiddleware(object):
         spider.logger.info('Spider opened: %s' % spider.name)
         
 
+class ProxyMiddleware(object):
+    '''
+    设置Proxy
+    '''
+
+#     def __init__(self, ip):
+#         self.ip = ip
+
+#     @classmethod
+#     def from_crawler(cls, crawler):
+#         return cls(ip=crawler.settings.get('PROXIES'))
+
+    def process_request(self, request, spider):
+#         ip = random.choice(self.ip)
+#         request.meta['proxy'] = ip
+# http://username:password@some_proxy_server:port
+#         request.meta['proxy'] = 'http://171.37.163.62:8123'  # http://www.xicidaili.com/ 可以免费获取ip
+        request.meta['proxy'] = 'https://222.168.41.246:8090'  # http://www.xicidaili.com/ 可以免费获取ip
     
+
 

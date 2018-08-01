@@ -15,6 +15,10 @@ SPIDER_MODULES = ['tutorial.spiders']
 NEWSPIDER_MODULE = 'tutorial.spiders'
 
 
+#mongodb数据库的URI和DB
+MONGO_URI = 'mongodb://localhost:27017'
+MONGO_DB = "scrapy"  
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'tutorial (+http://www.yourdomain.com)'
 
@@ -29,7 +33,7 @@ ROBOTSTXT_OBEY = False
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 # DOWNLOAD_DELAY = 3
-DOWNLOAD_DELAY = 11
+DOWNLOAD_DELAY = 1
 
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
@@ -64,6 +68,7 @@ DEFAULT_REQUEST_HEADERS = {
 #    'tutorial.middlewares.TutorialDownloaderMiddleware': 543,
 #}
 
+# 设置代理IP
 # DOWNLOADER_MIDDLEWARES = {
 #    'tutorial.middlewares.ProxyMiddleware': 543,
 # }
@@ -79,6 +84,10 @@ DEFAULT_REQUEST_HEADERS = {
 #ITEM_PIPELINES = {
 #    'tutorial.pipelines.TutorialPipeline': 300,
 #}
+
+ITEM_PIPELINES = {
+    'tutorial.pipelines.MongoPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

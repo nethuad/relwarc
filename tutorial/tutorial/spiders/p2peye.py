@@ -1,5 +1,7 @@
 import scrapy
 
+from tutorial.items import P2peyeItem
+
 class P2peyeSpider(scrapy.Spider):
     name = "p2peye"
 
@@ -29,10 +31,17 @@ class P2peyeSpider(scrapy.Spider):
                 'pname':pname,
                 'href':href,
                 'tags':tags,
-                'descriptions':descriptions,                
+                'descriptions':descriptions,
             }
 
             yield jsondata
+
+#             item = P2peyeItem()
+#             item['pname'] = pname
+#             item['href'] = href
+#             item['tags'] = tags
+#             item['descriptions'] = descriptions
+#             yield item   
         
         
         next_page = response.css('div.c-page a:contains("下一页")::attr(href)').extract_first()
